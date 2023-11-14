@@ -7,7 +7,7 @@ R Language version: 3.2.2 or higher
 
 python version: 3.6 or higher
 
-**Attention: if you use C++17 maybe reports errors.**
+**Attention: if you use C++17, it maybe reports errors.**
 
 ## Installation
 ```bash
