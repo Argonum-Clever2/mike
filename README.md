@@ -12,7 +12,7 @@ python version: 3.6 or higher
 ## Installation
 ```bash
 git clone https://github.com/Argonum-Clever2/mike.git
-cd mike/src
+cd src
 make
 Rscript install.r
 ```
