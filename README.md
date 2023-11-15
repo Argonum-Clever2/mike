@@ -104,7 +104,7 @@ compute the evolutionary distance，and then will generate the file named dist.t
 #### construction the phylogenetic tree
 
 using the evulutionary distance to construct the phylogenetic tree without branch length.
-** the file titled dist.txt was generated from the evolutionary distance **
+**the file titled dist.txt was generated from the evolutionary distance**
 ```bash
 Rscript draw.r -f dist.txt -o dist.nwk
 ```
