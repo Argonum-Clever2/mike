@@ -42,9 +42,6 @@ tryCatch({
 
 
 
-print(inputfile)
-print(outputfile)
-
 
 tree <- read.csv(inputfile, sep='\t', header = TRUE, row.names = 1)
 
@@ -53,8 +50,6 @@ tree <- bionj(dist)
 write.tree(tree, outputfile)
 lines <- readLines(outputfile)
 
-print(lines[0])
-print(class(lines[1]))
 
 sourceCpp(code="
     #include <string>
