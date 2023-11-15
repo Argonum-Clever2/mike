@@ -1,44 +1,109 @@
 # mike
+## Requirements
+
+C++ version: C++11
+
+R Language version: 3.2.2 or higher
+
+python version: 3.6 or higher
+
+**Attention: if you use C++17, it maybe reports errors.**
+
 ## Installation
 ```bash
 git clone https://github.com/Argonum-Clever2/mike.git
-cd mike/src
-# if not use PREFIX, the binary file will copy to mike/bin
-make install PREFIX=/path/to/install/mike
-
+cd src
+make
+Rscript install.r
 ```
 
 ## Tutorial
-### preparation
-You need to install seqkit and KMC in advance, and then run command below. The file will be processed into a kmer file.
-
+### the first step
+You need to install KMC in advance, and then run command below. The file will be processed into a kmer file. Or you can input the kmer file directly, just skip the step.
+ 
 ```python
-python3 kmc.py -f file.fastq -d dirpath
-
+# help
+python kmc.py
+# run
+python kmc.py -f file1 file2 file3 file4 file5 file6 -d dirpath
 ```
+### the second step 
+#### kmer file
+the format of a kmer file should like below, it is a string of kmer and the frequency.
 
-### jaccard index
-to compute jaccard index, two steps are required.
-#### the input file 
-the input file is kmer file.
-#### the first step 
+AAAAAAAAAAAAAAAAAAAAA   255
+
+AAAAAAAAAAAAAAAAAAAAC   255
+
+AAAAAAAAAAAAAAAAAAAAG   255
+
+AAAAAAAAAAAAAAAAAAAAT   255
+
+AAAAAAAAAAAAAAAAAAACA   255
+
+AAAAAAAAAAAAAAAAAAACC   255
+
+AAAAAAAAAAAAAAAAAAACG   255
+
+...   ...
+
+#### filelist
+filelist means a list of kmer file:
+
+absolute_path/kmer_file_1
+
+absolute_path/kmer_file_2
+
+absolute_path/kmer_file_3
+
+...   ...
+
+
+#### SKETCH
 sketch the genome skims, and the sketch file is in destination_path.
 ```bash
-# sketch the genome fasta/fastq
-# if you have a list of files
+
 ./mike sketch -t 10 -l filelist -d destination_path
-# if you just want to process a file
-./mike sketch -t 10 -l file -d destination_path
+
 ```
-#### the second step
-compute the jaccard index and distance for pairwire
+#### sketch_filelist
+the **sketch__filelist** is the a list of file obtained in the previous step.
+
+the format of sketch_filelist like this:
+
+0       1 
+
+1       35   
+
+2       4  
+
+3       4   
+
+4       10      
+
+...   ...
+
+
+#### the Jaccard coefficient 
+compute the jaccard coefficient for pairwire
 ```bash
-# if you have a list of filelist_1 of sketched files and other list of filelist_2 of sketched files
+
 ./mike compute -l filelist_1 -L filelist_2 -d destination_path
-# if you have a list of filelist_1 of sketched files and a sketched file
-./mike compute -l Sketchfilelist_1 -f Sketchfile -d destination_path
-# if you have a sketchedfile_1 and other Sketchedfile_2
-./mike compute -f Sketchedfile_1 -F Sketchedfile_2
+
 ```
 
+#### the evolutionary distance
 
+compute the evolutionary distance
+```bash
+
+./mike dist -l sketch_filelist_1 -L sketch_filelist_2 -d destination_path
+
+```
+
+#### construction the phylogenetic tree
+
+using the evulutionary distance to construct the phylogenetic tree without branch length
+```bash
+Rscript draw.r -f dist.txt -o dist.nwk
+```
