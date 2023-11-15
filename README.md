@@ -23,13 +23,13 @@ You need to install KMC in advance, and then run command below. The file will be
  
 ```python
 # help
-python kmc.py
+python kmc.py --help
 # run
 python kmc.py -f file1 file2 file3 file4 file5 file6 -d dirpath
 ```
 ### the second step 
 #### kmer file
-the format of a kmer file should like below, it is a string of kmer and the frequency.
+the format of a kmer file should like below, it is a string of kmer and the frequency file.
 
 AAAAAAAAAAAAAAAAAAAAA   255
 
@@ -48,7 +48,7 @@ AAAAAAAAAAAAAAAAAAACG   255
 ...   ...
 
 #### filelist
-filelist means a list of kmer file:
+filelist means the file that includes a list of kmer files:
 
 absolute_path/kmer_file_1
 
@@ -67,7 +67,7 @@ sketch the genome skims, and the sketch file is in destination_path.
 
 ```
 #### sketch_filelist
-the **sketch__filelist** is the a list of file obtained in the previous step.
+the **sketch__filelist** is the file that includes a list of file obtained in the previous step.
 
 the format of sketch_filelist like this:
 
@@ -94,7 +94,7 @@ compute the jaccard coefficient for pairwire
 
 #### the evolutionary distance
 
-compute the evolutionary distance， and then will generate the file named dist.txt in destination_path
+compute the evolutionary distance，and then will generate the file named dist.txt in destination_path
 ```bash
 
 ./mike dist -l sketch_filelist_1 -L sketch_filelist_2 -d destination_path
