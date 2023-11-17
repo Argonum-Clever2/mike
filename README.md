@@ -7,6 +7,8 @@ R Language version: 3.2.2 or higher
 
 python version: 3.6 or higher
 
+kmc(https://github.com/refresh-bio/KMC.git)
+
 **Attention: if you use C++17, it maybe reports errors.**
 
 ## Installation
@@ -19,7 +21,7 @@ Rscript install.r
 
 ## Tutorial
 ### the first step
-You need to install KMC in advance, and then run command below. The file will be processed into a kmer file. Or you can input the kmer file directly, just skip the step.
+You need to install KMC in advance, and add kmc to PATH. Then, run command below. The file will be processed into a kmer file. Or you can input the kmer file directly, just skip the step.
  
 ```python
 # help
