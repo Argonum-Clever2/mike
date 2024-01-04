@@ -3,7 +3,7 @@
 
 C++ version: C++11
 
-R Language version: 3.2.2 or higher
+R Language version: 3.2.2 or above but not exceed 4.0
 
 python version: 3.6 or higher
 
