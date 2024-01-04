@@ -69,9 +69,9 @@ sketch the genome skims, and the sketch file is in destination_path.
 
 ```
 #### sketch_filelist
-the **sketch__filelist** is the file that includes a list of file obtained in the previous step.
+the **sketch__filelist** is the file that includes a list of sketched file obtained in the previous step.
 
-the format of sketch_filelist like this:
+the format of sketched file like this:
 
 0       1 
 
