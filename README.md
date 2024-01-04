@@ -29,7 +29,7 @@ python kmc.py --help
 # run
 python kmc.py -f file1 file2 file3 file4 file5 file6 -d dirpath
 ```
-### the second step 
+ 
 #### kmer file
 the format of a kmer file should like below, it is a string of kmer and the frequency file.
 
@@ -60,7 +60,7 @@ absolute_path/kmer_file_3
 
 ...   ...
 
-
+### the second step
 #### SKETCH
 sketch the genome skims, and the sketch file is in destination_path.
 ```bash
@@ -68,8 +68,8 @@ sketch the genome skims, and the sketch file is in destination_path.
 ./mike sketch -t 10 -l filelist -d destination_path
 
 ```
-#### sketch_filelist
-the **sketch__filelist** is the file that includes a list of sketched file obtained in the previous step.
+#### sketched filelist
+the **sketched filelist** is the file that includes a list of sketched file obtained in the previous step.
 
 the format of sketched file like this:
 
@@ -85,12 +85,13 @@ the format of sketched file like this:
 
 ...   ...
 
+### the third step
 
 #### the Jaccard coefficient 
-compute the jaccard coefficient for pairwire
+compute the jaccard coefficient for pairwire, and then will generate the file named jaccard.txt in destination_path
 ```bash
 
-./mike compute -l filelist_1 -L filelist_2 -d destination_path
+./mike compute -l sketched_filelist_1 -L sketched_filelist_2 -d destination_path
 
 ```
 
@@ -99,13 +100,15 @@ compute the jaccard coefficient for pairwire
 compute the evolutionary distance，and then will generate the file named dist.txt in destination_path
 ```bash
 
-./mike dist -l sketch_filelist_1 -L sketch_filelist_2 -d destination_path
+./mike dist -l sketched_filelist_1 -L sketched_filelist_2 -d destination_path
 
 ```
 
+### the final step
+
 #### construction the phylogenetic tree
 
-using the evulutionary distance to construct the phylogenetic tree without branch length.
+using the evulutionary distance (dist.txt) to construct the phylogenetic tree without branch length.
 **the file titled dist.txt was generated from the evolutionary distance**
 ```bash
 Rscript draw.r -f dist.txt -o dist.nwk
