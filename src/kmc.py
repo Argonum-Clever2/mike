@@ -105,10 +105,10 @@ if __name__ == "__main__":
             filenameDict[newfilename]=newfile
     
         try:
-            if type == "fasta" or type == "fa":
+            if suftmp.endswith('fasta') or suftmp.endswith('fa') or suftmp.endswith('fasta.gz') or suftmp.endswith('fa.gz'):
                 for key, value in filenameDict.items():
                     fun_kmc_fa(value, args.dirpath, key, args.dirpath)
-            if type == "fastq" or type == "fq":
+            if suftmp.endswith('fastq') or suftmp.endswith('fq') or suftmp.endswith('fastq.gz') or suftmp.endswith('fq.gz'):
                 for key, value in filenameDict.items():
                     fun_kmc_fq(value, args.dirpath, key, args.dirpath)
         except Exception as e:
