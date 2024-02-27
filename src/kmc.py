@@ -106,15 +106,21 @@ if __name__ == "__main__":
     
         try:
 <<<<<<< HEAD
+<<<<<<< HEAD
             if type == "fasta" or type == "fa":
                 for key, value in filenameDict.items():
                     fun_kmc_fa(value, args.dirpath, key, args.dirpath)
             if type == "fastq" or type == "fq":
 =======
+=======
+>>>>>>> 71e8aa20ba61fc33b0825a60d915653c0585387a
             if suftmp.endswith('fasta') or suftmp.endswith('fa') or suftmp.endswith('fasta.gz') or suftmp.endswith('fa.gz'):
                 for key, value in filenameDict.items():
                     fun_kmc_fa(value, args.dirpath, key, args.dirpath)
             if suftmp.endswith('fastq') or suftmp.endswith('fq') or suftmp.endswith('fastq.gz') or suftmp.endswith('fq.gz'):
+<<<<<<< HEAD
+>>>>>>> 71e8aa20ba61fc33b0825a60d915653c0585387a
+=======
 >>>>>>> 71e8aa20ba61fc33b0825a60d915653c0585387a
                 for key, value in filenameDict.items():
                     fun_kmc_fq(value, args.dirpath, key, args.dirpath)
