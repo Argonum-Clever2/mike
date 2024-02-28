@@ -131,7 +131,7 @@ using the evulutionary distance (dist.txt) to construct the phylogenetic tree wi
 Rscript draw.r -f dist.txt -o dist.nwk
 ```
 
-If the final step encounters an error, you can manually construct the phylogenetic tree by opening RStudio, downloading the ape package, and inputting the file dist.txt.
+If the final step encounters an error, you can manually construct the phylogenetic tree by opening **RStudio**, downloading the ape package, and inputting the file dist.txt.
 ```R
 install.packages("ape")
 library(ape)
