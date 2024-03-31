@@ -26,7 +26,7 @@ Rscript install.r
 
 
 ## Tutorial
-### The Fisrt Step
+### The First Step
 You need to install KMC in advance, and add kmc to PATH. Then, run command below. The file will be processed into a kmer file. Or you can input the kmer file directly, just skip the step.
 
  
@@ -105,7 +105,7 @@ ABSOLUTE_PATH/sketched_file_3.jac
 ### The Third Step
 
 #### the Jaccard coefficient 
-compute the jaccard coefficient for pairwire, and then will generate the file named jaccard.txt in destination_path
+compute the pairwise Jaccard coefficient, and then will generate the file named jaccard.txt in destination_path
 ```bash
 
 ./mike compute -l ABSOLUTE_PATH/sketched_filelist -L ABSOLUTE_PATH/sketched_filelist -d DIRPATH
