@@ -134,7 +134,13 @@ if __name__ == "__main__":
             filenameDict[newfilename]=newfile
 
 
-        try:      
+            #avg_length, max_length, total_length, n_reads=sequence_stat(file, str(args.thread))
+            with open(newfile, "a+") as f:
+                f.write("{}\n".format(file))
+            filenameDict[newfilename]=newfile
+    
+        try:
+
             if type == "fasta" or type == "fa":
                 for key, value in filenameDict.items():
                     fun_kmc_fa(value, args.dirpath, key, args.dirpath)
@@ -150,6 +156,12 @@ if __name__ == "__main__":
             if type == 'bam':
                 for key, value in filenameDict.items():
                     fun_kmc_bam(value, args.dirpath, key, args.dirpath)
+            if suftmp.endswith('fasta') or suftmp.endswith('fa') or suftmp.endswith('fasta.gz') or suftmp.endswith('fa.gz'):
+                for key, value in filenameDict.items():
+                    fun_kmc_fa(value, args.dirpath, key, args.dirpath)
+            if suftmp.endswith('fastq') or suftmp.endswith('fq') or suftmp.endswith('fastq.gz') or suftmp.endswith('fq.gz'):
+                for key, value in filenameDict.items():
+                    fun_kmc_fq(value, args.dirpath, key, args.dirpath)
         except Exception as e:
             print("[ERROR]: ", e)
         
