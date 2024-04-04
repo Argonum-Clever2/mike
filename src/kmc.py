@@ -14,6 +14,7 @@ def fun_kmc_fa(filename, dirpath, newfilename, tmpdir):
     
     
     kmcStd=check_output(["kmc", "-k21", "-fm", "@{}".format(filename), newfilename, tmpdir], stderr=STDOUT, universal_newlines=True)
+    print(kmcStd)
     call(["kmc_tools", "transform", newfilename, "sort", ".", "dump", "-s", newfile], stderr=open(os.devnull, "w"))
     os.remove(newfilename+".kmc_pre")
     os.remove(newfilename+".kmc_suf")
@@ -32,6 +33,7 @@ def fun_kmc_fq(filename, dirpath, newfilename, tmpdir):
     
     
     kmcStd=check_output(["kmc", "-k21", "@{}".format(filename), newfilename, tmpdir], stderr=STDOUT, universal_newlines=True)
+    print(kmcStd)
     call(["kmc_tools", "transform", newfilename, "sort", ".", "dump", "-s", newfile], stderr=open(os.devnull, "w"))
     os.remove(newfilename+".kmc_pre")
     os.remove(newfilename+".kmc_suf")
@@ -49,6 +51,7 @@ def fun_kmc_bam(filename, dirpath, newfilename, tmpdir):
     
     
     kmcStd=check_output(["kmc", "-k21", "-fbam", "@{}".format(filename), newfilename, tmpdir], stderr=STDOUT, universal_newlines=True)
+    print(kmcStd)
     call(["kmc_tools", "transform", newfilename, "sort", ".", "dump", "-s", newfile], stderr=open(os.devnull, "w"))
     os.remove(newfilename+".kmc_pre")
     os.remove(newfilename+".kmc_suf")
@@ -120,7 +123,7 @@ if __name__ == "__main__":
                 filename = prefix
             else:
                 filename="_".join(tmp_list)
-            print(filename)
+            # print(filename)
 
             
             newfilename=os.path.join(args.dirpath, filename)
@@ -141,8 +144,6 @@ if __name__ == "__main__":
                     fun_kmc_fa(value, args.dirpath, key, args.dirpath)
             if type == "fastq" or type == "fq":
                 for key, value in filenameDict.items():
-                    print(key)
-                    print(value)
                     fun_kmc_fq(value, args.dirpath, key, args.dirpath)
             if type == 'fasta.gz' or type == 'fa.gz':
                 for key, value in filenameDict.items():
