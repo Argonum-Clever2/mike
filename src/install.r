@@ -1,0 +1,13 @@
+# install.packages("Rcpp_1.0.11.tar.gz", repos=NULL, type = "source", lib="lib")
+# install.packages("getopt_1.20.2.tar.gz", repos=NULL, type = "source")
+# install.packages("optparse_1.6.0.tar.gz", repos=NULL, type = "source")
+# install.packages("digest_0.6.19.tar.gz", repos=NULL, type = "source")
+# install.packages("jsonlite_1.6.tar.gz", repos=NULL, type = "source")
+#install.packages("ape_5.7-1.tar.gz", repos=NULL, type = "source")
+
+install.packages("Rcpp", repos="https://cloud.r-project.org/")
+install.packages("getopte", repos="https://cloud.r-project.org/")
+install.packages("optparse", repos="https://cloud.r-project.org/")
+install.packages("digest", repos="https://cloud.r-project.org/")
+install.packages("jsonlite", repos="https://cloud.r-project.org/")
+install.packages("ape", repos="https://cloud.r-project.org/")
