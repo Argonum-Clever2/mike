@@ -37,6 +37,12 @@ python kmc.py --help
 python kmc.py -f file1 file2 file3 file4 file5 file6 -d dirpath
 ```
 
+![image](https://github.com/Argonum-Clever2/mike/assets/84487311/76e4ff64-8aff-453f-9c48-9f402585bdbb)
+
+
+
+
+
 If the python kmc.py script gives an error, you can also just run the **kmc** command to process all kmc-acceptable file formats into kmer files.
 ```bash
 # kmc--first step
