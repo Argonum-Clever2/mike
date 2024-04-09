@@ -110,11 +110,12 @@ if __name__ == "__main__":
             # 判断是不是gz文件格式
             type = suftmp.split('.')[-1]
             if type == "gz":
-                type = suftmp.split('.')[-2]+ "gz"
+                type = suftmp.split('.')[-2]+ ".gz"
                 prefix = suftmp.split('.')[-3]
             else:
                 prefix = suftmp.split('.')[0]
             # 提取文件名
+            print(type)
             
             
             # 如果测序文件中有_的话就用这个
@@ -123,7 +124,7 @@ if __name__ == "__main__":
                 filename = prefix
             else:
                 filename="_".join(tmp_list)
-            # print(filename)
+            #print(filename)
 
             
             newfilename=os.path.join(args.dirpath, filename)
@@ -135,6 +136,7 @@ if __name__ == "__main__":
             with open(newfile, "a+") as f:
                 f.write("{}\n".format(file))
             filenameDict[newfilename]=newfile
+        
 
     
         try:
