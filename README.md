@@ -1,4 +1,4 @@
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/5c9624df-1034-49b2-9a8e-106df9297818)# mike
+# mike
 ## Requirements
 
 C++ version: C++11
