@@ -77,11 +77,17 @@ If your file type is fasta , you need to add the -fm parameter.
 the format of a kmer file should like below. Each line consists of a 21-mer string and a number representing the frequency of occurrence of that 21-mer string, separated by a '\t'.
 
 AAAAAAAAAAAAAAAAAAAAA   255
+
 AAAAAAAAAAAAAAAAAAAAC   255
+
 AAAAAAAAAAAAAAAAAAAAG   255
+
 AAAAAAAAAAAAAAAAAAAAT   255
+
 AAAAAAAAAAAAAAAAAAACA   255
+
 AAAAAAAAAAAAAAAAAAACC   255
+
 AAAAAAAAAAAAAAAAAAACG   255
 
 ...   ...
