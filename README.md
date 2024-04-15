@@ -61,10 +61,14 @@ kmc -k21 -t10 @INPUT.fastq.list OUTPUT_PREFIX DIRPATH
 kmc_tools transform OUTPUT_PREFIX sort . dump -s OUTPUT_PREFIX.txt
 
 ```
-If you are a fasta file, you need to add the -fm parameter.
+If your file type is fasta , you need to add the -fm parameter.
+
 `for line in `ls | grep -E "E200008917*"`; do path=`pwd`; echo ${path}/${line} >> list; done`
+
 `kmc -k21 -fq -t10 @list E200008917 .`
+
 `kmc_tools transform E200008917 sort . dump -s E200008917.txt`
+
 ![image](https://github.com/Argonum-Clever2/mike/assets/84487311/1e64c62f-56a2-48b4-8d1e-74c0b08225cd)
 
 
