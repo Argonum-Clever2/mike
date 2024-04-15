@@ -44,7 +44,9 @@ for example，we have multiple fastq files, and use kmc.py to process into kmer 
 `python ../mike-master/src/kmc.py -f /data0/stu_wangfang/tmptmp/E200008917_L01_171_1.fq.gz /data0/stu_wangfang/tmptmp/E200008917_L01_171_2.fq.gz -d /data0/stu_wangfang/tmp -t 10`
 ![image](https://github.com/Argonum-Clever2/mike/assets/84487311/82033d64-4aa2-49e1-ab28-3c5401f0f06d)
 ![image](https://github.com/Argonum-Clever2/mike/assets/84487311/f3107bbd-ae47-4662-9c5f-98b063cd6bae)
+
 We will get a kmer file(E200008917_L01_171.txt) in txt file format, the content of the file should be as follows.
+
 ![image](https://github.com/Argonum-Clever2/mike/assets/84487311/44769bed-3ef0-47aa-b5f8-7020dfe45702)
 
 If the python kmc.py script gives an error, you can also just run the **kmc** command to process all kmc-acceptable file formats into kmer files.
