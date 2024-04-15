@@ -63,7 +63,7 @@ kmc_tools transform OUTPUT_PREFIX sort . dump -s OUTPUT_PREFIX.txt
 ```
 If your file type is fasta , you need to add the -fm parameter.
 
-`for line in `ls | grep -E "E200008917*"`; do path=`pwd`; echo ${path}/${line} >> list; done`
+```for line in `ls | grep -E "E200008917*"`; do path=`pwd`; echo ${path}/${line} >> list; done```
 
 `kmc -k21 -fq -t10 @list E200008917 .`
 
