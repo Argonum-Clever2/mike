@@ -39,15 +39,20 @@ python kmc.py -f file1 file2 file3 file4 file5 file6 -d dirpath
 ```
 
 for example，we have multiple fastq files, and use kmc.py to process into kmer files.
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/7831a5de-58cc-4c51-94b0-e663595f0d25)
+
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/7831a5de-58cc-4c51-94b0-e663595f0d25" width=350 heigth=225>
 
 `python ../mike-master/src/kmc.py -f /data0/stu_wangfang/tmptmp/E200008917_L01_171_1.fq.gz /data0/stu_wangfang/tmptmp/E200008917_L01_171_2.fq.gz -d /data0/stu_wangfang/tmp -t 10`
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/82033d64-4aa2-49e1-ab28-3c5401f0f06d)
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/f3107bbd-ae47-4662-9c5f-98b063cd6bae)
+
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/82033d64-4aa2-49e1-ab28-3c5401f0f06d" width=500 heigth=400>
+
+*****
+
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/f3107bbd-ae47-4662-9c5f-98b063cd6bae" width=375 height=400>
 
 We will get a kmer file(E200008917_L01_171.txt) in txt file format, the content of the file should be as follows.
 
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/44769bed-3ef0-47aa-b5f8-7020dfe45702)
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/44769bed-3ef0-47aa-b5f8-7020dfe45702" width=200 height=225>
 
 If the python kmc.py script gives an error, you can also just run the **kmc** command to process all kmc-acceptable file formats into kmer files.
 ```bash
@@ -63,19 +68,20 @@ kmc_tools transform OUTPUT_PREFIX sort . dump -s OUTPUT_PREFIX.txt
 ```
 If your file type is fasta , you need to add the -fm parameter.
 
-```for line in `ls | grep -E "E200008917*"`; do path=`pwd`; echo ${path}/${line} >> list; done```
+```bash
+for line in `ls | grep -E "E200008917*"`; do path=`pwd`; echo ${path}/${line} >> list; done
+kmc -k21 -fq -t10 @list E200008917 .
+kmc_tools transform E200008917 sort . dump -s E200008917.txt
+```
 
-`kmc -k21 -fq -t10 @list E200008917 .`
-
-`kmc_tools transform E200008917 sort . dump -s E200008917.txt`
-
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/1e64c62f-56a2-48b4-8d1e-74c0b08225cd)
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/1e64c62f-56a2-48b4-8d1e-74c0b08225cd" width=650 height=400>
 
 
 
 #### kmer file
 the format of a kmer file should like below. Each line consists of a 21-mer string and a number representing the frequency of occurrence of that 21-mer string, separated by a '\t'.
 
+```
 AAAAAAAAAAAAAAAAAAAAA   255
 
 AAAAAAAAAAAAAAAAAAAAC   255
@@ -90,20 +96,25 @@ AAAAAAAAAAAAAAAAAAACC   255
 
 AAAAAAAAAAAAAAAAAAACG   255
 
+```
+
 ...   ...
 
 #### filelist
 The filelist means the file that includes a list of kmer files. The filelist needs to include the absolute path and filename.
 
+```
 ABSOLUTE_PATH/kmer_name_file_1
 
 ABSOLUTE_PATH/kmer_name_file_2
 
 ABSOLUTE_PATH/kmer_name_file_3
 
+```
+
 ...   ...
 
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/256a0732-3df9-4f66-b5cd-7e35f3be1cf9)
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/256a0732-3df9-4f66-b5cd-7e35f3be1cf9" width=550 height=50>
 
 
 ### The Second Step
@@ -118,14 +129,22 @@ The second step is to process the kmer files in the filelist as sketched files, 
 ```
 
 First, create a list containing all the kmer files that need to be processed.You will get a file ending with 'jac'.
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/0c6c8d41-1694-42f1-80c9-4ad3563e56b8)
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/3888b31b-85d7-463f-8dda-91e9f454719b)
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/d110d23d-3358-4677-9e26-3c2522710c36)
+
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/0c6c8d41-1694-42f1-80c9-4ad3563e56b8" width=500 height=20>
+
+**********
+
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/3888b31b-85d7-463f-8dda-91e9f454719b" width=650 height=50>
+
+**********
+
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/d110d23d-3358-4677-9e26-3c2522710c36" width=650 height=400>
 
 
 #### sketched filelist
 The sketched file is the file obtained in the previous step, which ends with 'jac'. The **sketched filelist** is the file that includes a list of sketched file.
 
+```
 ABSOLUTE_PATH/sketched_file_1.jac
 
 ABSOLUTE_PATH/sketched_file_2.jac
@@ -134,9 +153,13 @@ ABSOLUTE_PATH/sketched_file_3.jac
 
 ...   ...
 
+```
 
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/0518898d-3afa-4749-ba3a-1c121f4c642d)
-![image](https://github.com/Argonum-Clever2/mike/assets/84487311/40acccf1-b9e0-46e0-9e92-1ea13630f786)
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/0518898d-3afa-4749-ba3a-1c121f4c642d" width=400 heigth=400>
+
+*********************
+
+<img src="https://github.com/Argonum-Clever2/mike/assets/84487311/40acccf1-b9e0-46e0-9e92-1ea13630f786" width=475 height=40>
 
 
 ### The Third Step
