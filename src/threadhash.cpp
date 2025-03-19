@@ -17,7 +17,7 @@
 #include <dirent.h>
 #include <getopt.h>
 #include <limits.h>
-#include<sys/sysinfo.h>
+//#include<sys/sysinfo.h>
 #include<time.h>
 
 #include <cstdlib>
