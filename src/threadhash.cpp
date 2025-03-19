@@ -17,7 +17,7 @@
 #include <dirent.h>
 #include <getopt.h>
 #include <limits.h>
-#include<sys/sysinfo.h>
+//#include<sys/sysinfo.h>
 #include<time.h>
 
 #include <cstdlib>
@@ -236,7 +236,7 @@ int Minhash::get_read_point(const std::string &file, Minhash::Parameters &parame
     return 0;
 }
 
-int Minhash::get_pai_shuffle(){
+void Minhash::get_pai_shuffle(){
     int paiLen = Minhash::getPaiLen();
     vector<uint32> Shuffle(SUFFIX_MAX);
     for(int i=0; i < SUFFIX_MAX; i++){

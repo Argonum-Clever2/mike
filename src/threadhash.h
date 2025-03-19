@@ -81,11 +81,11 @@ class Minhash{
         bool deleteDirPath(const MinhashListInput &minhashinput);
         bool deleteDirPath(const MinhashFileInput &minhashfile);
         
-        int getReadResizeArr(){readPointArr.resize(parameters.threadCout);}
+        void getReadResizeArr(){readPointArr.resize(parameters.threadCout);}
         //int getOutputResizeArr(){outputListArr.resize(parameters.threadCout);}
         int get_read_point(const std::string &file, Minhash::Parameters &parameters);
 
-        int get_pai_shuffle();
+        void get_pai_shuffle();
         // 错了，这里要用目标路径dirpath
         //int getOutputFile(const std::string &file, Minhash::MinhashFileInput &minhashfileinput);
         int getOutputFile(const std::string &file, Minhash::MinhashListInput &minhashlistinput);

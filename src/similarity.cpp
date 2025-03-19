@@ -46,7 +46,7 @@ float Similarity::getFileCFile(std::string file_1, std::string file_2, int paiLe
     uint32 intersection = 0;
     uint32 uni = 0;
 
-    uint intersection_arr[paiLen];
+    uint32 intersection_arr[paiLen];
     for(int i=0; i < paiLen; i++){
        intersection_arr[i] = 0;
     }
