@@ -44,12 +44,15 @@ bool Combine::getCombine(std::vector<std::string> &outputListArr, std::string fi
             std::cerr<<outputListArr[i]<<" is error, please check the file!"<<std::endl;
             return false;
         }
-        while(!is.eof()){
-            getline(is, suftmp);
-            if (suftmp[suftmp.size()-1] != '\n')
-                suftmp += "\n";
-            if (suftmp == "") break;
-            ot<<suftmp;
+//        while(!is.eof()){
+//            getline(is, suftmp);
+//            if (suftmp[suftmp.size()-1] != '\n')
+//                suftmp += "\n";
+//            if (suftmp == "") break;
+//            ot<<suftmp;
+//        }
+        while(getline(is, suftmp)){
+            ot<<suftmp<<"\n";
         }
         is.close();
         if (!remove(outputListArr[i].c_str())==0){
